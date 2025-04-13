@@ -1,0 +1,164 @@
+/* styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+:root {
+  --soft-red: hsl(10, 79%, 65%);
+  --cyan: hsl(186, 34%, 60%);
+  --dark-brown: hsl(25, 47%, 15%);
+  --medium-brown: hsl(28, 10%, 53%);
+  --cream: hsl(27, 66%, 92%);
+  --very-pale-orange: hsl(33, 100%, 98%);
+
+  --font-family: 'DM Sans', sans-serif;
+  --font-size: 18px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  background-color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 400px;
+}
+
+.balance-card {
+  background-color: var(--soft-red);
+  color: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.balance-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.balance-info h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  border-radius: 50%;
+  position: relative;
+}
+
+.logo::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 26px;
+  height: 26px;
+  background-color: var(--soft-red);
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.spending-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.spending-card h3 {
+  margin-bottom: 2rem;
+  color: var(--dark-brown);
+}
+
+.bar-chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 0.5rem;
+  height: 150px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.bar {
+  text-align: center;
+  position: relative;
+  flex: 1;
+}
+
+.fill {
+  background-color: var(--soft-red);
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.bar.wed .fill {
+  background-color: var(--cyan);
+}
+
+.tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--dark-brown);
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.bar.active .tooltip {
+  opacity: 1;
+}
+
+.day {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--medium-brown);
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid var(--cream);
+  padding-top: 1rem;
+}
+
+.summary-left p,
+.summary-right p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--medium-brown);
+}
+
+.summary-left h2 {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--dark-brown);
+}
+
+.summary-right p:first-child {
+  font-weight: bold;
+  text-align: right;
+  color: var(--dark-brown);
+}

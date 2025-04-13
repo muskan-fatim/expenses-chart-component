@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expenses Chart Component</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <div class="balance-card">
+      <div class="balance-info">
+        <p>My balance</p>
+        <h2>$921.48</h2>
+      </div>
+      <div class="logo"></div>
+    </div>
+
+    <div class="spending-card">
+      <h3>Spending – Last 7 days</h3>
+
+      <div class="bar-chart">
+        <div class="bar mon" data-amount="$17.45">
+          <div class="tooltip">$17.45</div>
+          <div class="fill" style="height: 40px;"></div>
+          <div class="day">mon</div>
+        </div>
+        <div class="bar tue" data-amount="$34.91">
+          <div class="tooltip">$34.91</div>
+          <div class="fill" style="height: 80px;"></div>
+          <div class="day">tue</div>
+        </div>
+        <div class="bar wed" data-amount="$52.36">
+          <div class="tooltip">$52.36</div>
+          <div class="fill" style="height: 120px;"></div>
+          <div class="day">wed</div>
+        </div>
+        <div class="bar thu" data-amount="$31.07">
+          <div class="tooltip">$31.07</div>
+          <div class="fill" style="height: 75px;"></div>
+          <div class="day">thu</div>
+        </div>
+        <div class="bar fri" data-amount="$23.39">
+          <div class="tooltip">$23.39</div>
+          <div class="fill" style="height: 55px;"></div>
+          <div class="day">fri</div>
+        </div>
+        <div class="bar sat" data-amount="$43.28">
+          <div class="tooltip">$43.28</div>
+          <div class="fill" style="height: 95px;"></div>
+          <div class="day">sat</div>
+        </div>
+        <div class="bar sun" data-amount="$25.48">
+          <div class="tooltip">$25.48</div>
+          <div class="fill" style="height: 60px;"></div>
+          <div class="day">sun</div>
+        </div>
+      </div>
+
+      <div class="summary">
+        <div class="summary-left">
+          <p>Total this month</p>
+          <h2>$478.33</h2>
+        </div>
+        <div class="summary-right">
+          <p>+2.4%</p>
+          <p>from last month</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const bars = document.querySelectorAll('.bar');
+
+    bars.forEach(bar => {
+      bar.addEventListener('mouseenter', () => {
+        bar.classList.add('active');
+      });
+
+      bar.addEventListener('mouseleave', () => {
+        bar.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
